@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean class="com.enbaev.Deck">
+        <constructor-arg index="0" ref="list"/>
+    </bean>
+    <bean id="suitDiamond" class="com.enbaev.Suit" factory-method="valueOf">
+        <constructor-arg value="DIAMONDS"/>
+    </bean>
+    <bean id="suitHearts" class="com.enbaev.Suit" factory-method="valueOf">
+        <constructor-arg value="HEARTS"/>
+    </bean>
+    <bean id="suitSpades" class="com.enbaev.Suit" factory-method="valueOf">
+        <constructor-arg value="SPADES"/>
+    </bean>
+    <util:list id="list">
+    <bean  class="com.enbaev.Cards">
+        <constructor-arg  value="valet"/>
+        <constructor-arg  ref="suitDiamond"/>
+    </bean>
+        <bean  class="com.enbaev.Cards">
+            <constructor-arg  value="king"/>
+            <constructor-arg  ref="suitHearts"/>
+        </bean>
+        <bean  class="com.enbaev.Cards">
+            <constructor-arg  value="6"/>
+            <constructor-arg  ref="suitSpades"/>
+        </bean>
+</util:list>
+
+</beans>
