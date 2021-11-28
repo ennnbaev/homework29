@@ -30,6 +30,10 @@
             <constructor-arg  value="6"/>
             <constructor-arg  ref="suitSpades"/>
         </bean>
+        <bean  class="com.enbaev.Cards">
+            <constructor-arg  value="queen"/>
+            <constructor-arg  ref="suitSpades"/>
+        </bean>
 </util:list>
 
 </beans>
